@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Example app with controllers</title>
+
+    <script src="lib/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers/scope-like-controller.js"></script>
+    <script src="controllers/controller-as.js"></script>
+</head>
+
+<body ng-app="controller-syntax">
+
+    <div style="width: 49%; float: left">
+
+        This is $scope-like syntax example of controller.
+        <br /><hr /><hr />
+
+        <span ng-controller="PageCtrlScope">
+
+            This is page controller. My name is <b>{{name}}</b>.
+            <br />
+            My description is:
+            {{details.description}}
+            <br />
+            Change my name
+            <input ng-model="name" />
+            <br />
+            Change my description
+            <input ng-model="details.description" />
+            <br />
+            <hr />
+
+            <span ng-controller="HeaderCtrlScope">
+
+                This is header controller. My name is <b>{{name}}</b>.
+                <br />
+                My description is:
+                {{details.description}}
+                <br />
+                Change my name
+                <input ng-model="name" />
+                <br />
+                Change my description
+                <input ng-model="details.description" />
+                <br />
+                <hr />
+
+            </span>
+
+            <span ng-controller="BodyCtrlScope">
+
+                This is body controller. My name is <b>{{name}}</b>.
+                <br />
+                My description is:
+                {{details.description}}
+                <br />
+                Change my name
+                <input ng-model="name" />
+                <br />
+                Change my description
+                <input ng-model="details.description" />
+                <br />
+                <hr />
+
+            </span>
+
+        </span>
+
+    </div>
+
+
+
+
+
+    <div style="width: 49%; float: right">
+
+        This is controller as syntax example of controller.
+        <br /><hr /><hr />
+
+        <span ng-controller="PageCtrlAs as pageCtl">
+
+            This is page controller. My name is <b>{{pageCtl.name}}</b>.
+            <br />
+            My description is:
+            {{pageCtl.details.description}}
+            <br />
+            Change my name
+            <input ng-model="pageCtl.name" />
+            <br />
+            Change my description
+            <input ng-model="pageCtl.details.description" />
+            <br />
+            <hr />
+
+            <span ng-controller="HeaderCtrlAs as headCtl">
+
+                This is header controller. My name is <b>{{headCtl.name}}</b>.
+                <br />
+                My description is:
+                {{pageCtl.details.description}}
+                <br />
+                Change my name
+                <input ng-model="headCtl.name" />
+                <br />
+                Change my description
+                <input ng-model="pageCtl.details.description" />
+                <br />
+                <hr />
+
+            </span>
+
+            <span ng-controller="BodyCtrlAs as bodyCtl">
+
+                This is body controller. My name is <b>{{bodyCtl.name}}</b>.
+                <br />
+                My description is:
+                {{pageCtl.details.description}}
+                <br />
+                Change my name
+                <input ng-model="bodyCtl.name" />
+                <br />
+                Change my description
+                <input ng-model="pageCtl.details.description" />
+                <br />
+                <button ng-click="bodyCtl.execute()">Hit me!</button>
+                <hr />
+
+            </span>
+
+        </span>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+"$scope"-like controller syntax vs. "controller as" syntax in angular.js
+
+
+----------------------------------------------------
+Why would I use "$scope"-like syntax?
+----------------------------------------------------
+
+Less verbose. No need to add anything before variable name when accesing it from view (html).
+If you have $scope.variable in the controller, you access it as {{variable}} in the view.
+
+OOP-like inheritance.
+When having 2 controllers, a parent and a child, and you have an object on the parent like this:
+$scope.variable = {bool: true};
+you can access the variable just by saying $scope.variable.bool in the child controller or by {{variable.bool}} in the view.
+The variable will be seen in the child controller.
+
+
+----------------------------------------------------
+Why would I use "controller as" syntax?
+----------------------------------------------------
+
+It is clearer to read. You know where a variable/function is defined when accessing it.
+
+If you're new to angular, it is more friendly. You don't have to use $scope, which is a new thing and you need to understand it before using it.
+You use also "this" keyword, like you do it Java or C++.
+
+
+----------------------------------------------------
+Why wouldn't I use "$scope"-like syntax
+----------------------------------------------------
+
+You would.
+
+
+----------------------------------------------------
+Why wouldn't I use "controller as" syntax
+----------------------------------------------------
+
+It's a bad practice. You use "this" and that means you have full access to the controller.
+With $scope, you don't access the controller itself, you access a representation of the controller, a view-model.
+
+If you move a variable/function from a controller to another, you have to modify every place in the view where you called the variable/function.
+Moreover, you don't have inheritance with "controller as"
+
+You don't have inheritance.
+When declaring variables/functions with "this", they are not inherited by children controllers.
